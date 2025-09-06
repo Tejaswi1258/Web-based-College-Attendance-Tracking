@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Attendance Tracking System</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="py-3 px-4 md:px-8 flex justify-between items-center bg-white shadow-sm">
+    <div class="flex items-center">
+      <img 
+        src="https://www.pvpsiddhartha.ac.in/dep_mech/ICRAIME-2025/images/pvpsit.jpg" 
+        alt="PVPSIT Logo" 
+        class="h-10 w-10 md:h-12 md:w-12 rounded-full object-cover"
+      >
+      <h2 class="ml-2 mb-0 font-bold text-gray-800 text-lg md:text-xl">Check-In</h2>
+    </div>
+    <div class="flex gap-2">
+      <button id="signupBtn" class="btn-outline-primary flex items-center gap-1 text-sm md:text-base">
+        <span class="hidden md:inline">Sign Up</span>
+      </button>
+      <button id="loginBtn" class="btn-primary flex items-center gap-1 text-sm md:text-base">
+        <span class="hidden md:inline">Login</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="py-12 md:py-20 px-4 bg-gradient-to-r from-green-50 to-teal-50">
+      <div class="container mx-auto flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+          <p class="text-green-600 font-medium mb-2">Student Attendance</p>
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
+            Track<br>Student<br>Attendance
+          </h1>
+          <p class="text-lg text-gray-600 mb-6">
+            Simplify attendance tracking with our intuitive student portal. Monitor attendance, 
+            generate reports, and improve student engagement effortlessly. Start today!
+          </p>
+          <button 
+            id="getStartedBtn"
+            class="px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors duration-200"
+          >
+            Get Started
+          </button>
+        </div>
+        
+        <div class="md:w-1/2">
+          <div class="bg-white rounded-xl shadow-md p-6">
+            <h4 class="text-center mb-3 font-bold text-gray-800">Welcome to Check-In</h4>
+            <p class="text-center text-gray-600 mb-4">Login to access your personalized dashboard and attendance insights.</p>
+            <form id="loginForm">
+              <div class="mb-4">
+                <label for="username" class="block text-sm font-medium text-gray-700 mb-1">
+                  Username
+                </label>
+                <input
+                  id="username"
+                  type="text"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                  required
+                >
+              </div>
+              <div class="mb-4">
+                <label for="password" class="block text-sm font-medium text-gray-700 mb-1">
+                  Password
+                </label>
+                <div class="relative">
+                  <input
+                    id="password"
+                    type="password"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                    required
+                  >
+                  <button
+                    type="button"
+                    id="togglePassword"
+                    class="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                  >
+                    👁
+                  </button>
+                </div>
+              </div>
+              <button 
+                type="submit"
+                class="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md transition duration-200"
+              >
+                Login
+              </button>
+              <div class="text-center mt-3">
+                <a href="#" class="text-green-600 hover:text-green-800 text-sm">
+                  Forgot Password?
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container mx-auto py-12 px-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-5 rounded-lg shadow-sm transition-transform duration-300 hover:shadow-md hover:-translate-y-1 bg-yellow-100">
+          <div class="flex flex-col items-center text-center">
+            <div class="text-4xl mb-3 text-yellow-600">📊</div>
+            <h5 class="text-lg font-semibold mb-2">Easy Tracking</h5>
+            <p class="text-gray-700">Track attendance with real-time updates.</p>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-lg shadow-sm transition-transform duration-300 hover:shadow-md hover:-translate-y-1 bg-yellow-200">
+          <div class="flex flex-col items-center text-center">
+            <div class="text-4xl mb-3 text-yellow-600">⚡</div>
+            <h5 class="text-lg font-semibold mb-2">Quick Access</h5>
+            <p class="text-gray-700">Get info in just a few clicks.</p>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-lg shadow-sm transition-transform duration-300 hover:shadow-md hover:-translate-y-1 bg-green-200">
+          <div class="flex flex-col items-center text-center">
+            <div class="text-4xl mb-3 text-green-600">🔒</div>
+            <h5 class="text-lg font-semibold mb-2">Secure Login</h5>
+            <p class="text-gray-700">Personalized and protected access.</p>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-lg shadow-sm transition-transform duration-300 hover:shadow-md hover:-translate-y-1 bg-green-100">
+          <div class="flex flex-col items-center text-center">
+            <div class="text-4xl mb-3 text-green-600">🔔</div>
+            <h5 class="text-lg font-semibold mb-2">Notifications</h5>
+            <p class="text-gray-700">Stay updated instantly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 text-white bg-cover bg-center" 
+      style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), 
+                url('https://www.pvpsiddhartha.ac.in/dep_mech/ICRAIME-2025/images/pvpsit.jpg')">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row md:items-center">
+          <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+            <h2 class="text-3xl font-bold mb-4">About PVPSIT</h2>
+            <p class="mb-4">
+              Prasad V. Potluri Siddhartha Institute of Technology (PVPSIT), established in 1998 in Vijayawada, 
+              Andhra Pradesh, is an autonomous institution affiliated with JNTUK and approved by AICTE. 
+              The institute holds an 'A+' grade accreditation from NAAC and is also accredited by the NBA, 
+              reflecting its commitment to academic excellence.
+            </p>
+            <p class="mb-4">
+              PVPSIT offers undergraduate and postgraduate programs in engineering and management disciplines. 
+              The campus spans approximately 9 acres and is equipped with modern facilities, including state-of-the-art 
+              laboratories and libraries.
+            </p>
+            <p>
+              For more information, visit the official website: 
+              <a 
+                href="https://www.pvpsiddhartha.ac.in/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="text-yellow-300 hover:text-yellow-100 transition-colors duration-200"
+              >
+                pvpsiddhartha.ac.in
+              </a>
+            </p>
+          </div>
+          <div class="md:w-1/2">
+            <img 
+              src="https://www.pvpsiddhartha.ac.in/dep_mech/ICRAIME-2025/images/pvpsit.jpg" 
+              alt="College Image" 
+              class="w-full h-auto rounded-lg border-4 border-white shadow-lg transform transition-transform duration-500 hover:scale-105" 
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">What Our Students Say</h2>
+        
+        <div class="relative max-w-3xl mx-auto">
+          <div class="overflow-hidden">
+            <div id="testimonialSlider" class="flex transition-transform duration-500 ease-in-out">
+              <!-- Testimonials will be inserted here by JavaScript -->
+            </div>
+          </div>
+          
+          <button id="prevTestimonial" class="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 md:-ml-8 bg-white rounded-full p-2 shadow-md focus:outline-none">
+            ←
+          </button>
+          
+          <button id="nextTestimonial" class="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 md:-mr-8 bg-white rounded-full p-2 shadow-md focus:outline-none">
+            →
+          </button>
+          
+          <div id="testimonialDots" class="flex justify-center mt-6">
+            <!-- Dots will be inserted here by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Location Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8">Find Us</h2>
+        
+        <div class="relative mx-auto max-w-4xl">
+          <div class="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-lg">
+            <iframe
+              src="https://maps.google.com/maps?q=PVPSIT%20Vijayawada&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="450"
+              style="border: 0"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="PVPSIT Map Location"
+              class="w-full h-full"
+            ></iframe>
+          </div>
+          
+          <div class="absolute top-8 right-8 bg-black bg-opacity-85 text-white py-3 px-6 rounded-lg shadow-md text-xl font-bold">
+            PVPSIT, Vijayawada
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h5 class="text-xl font-bold mb-4">Contact Us</h5>
+          <p class="mb-2">Email: info@pvpsit.edu</p>
+          <p>Phone: 123-456-7890</p>
+        </div>
+        
+        <div>
+          <h5 class="text-xl font-bold mb-4">About</h5>
+          <p>
+            Check-in is a digital platform designed for students to manage their attendance seamlessly.
+            Track your attendance records, view reports, and stay up-to-date with your academic progress.
+          </p>
+        </div>
+        
+        <div>
+          <h5 class="text-xl font-bold mb-4">Follow Us</h5>
+          <div class="flex space-x-4 mb-4">
+            <a href="#" class="hover:text-blue-400 transition-colors duration-200">Facebook</a>
+            <a href="#" class="hover:text-red-400 transition-colors duration-200">YouTube</a>
+            <a href="#" class="hover:text-blue-300 transition-colors duration-200">Twitter</a>
+          </div>
+          <p>All Rights Reserved © <span id="currentYear"></span></p>
+        </div>
+      </div>
+      
+      <div class="mt-8 pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+        <a 
+          href="#" 
+          class="bg-white text-gray-900 hover:bg-gray-200 px-6 py-2 rounded-full font-medium transition-colors duration-200"
+        >
+          Download for PC
+        </a>
+        <a 
+          href="#" 
+          class="bg-white text-gray-900 hover:bg-gray-200 px-6 py-2 rounded-full font-medium transition-colors duration-200"
+        >
+          Download for Mobile
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
